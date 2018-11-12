@@ -25,9 +25,9 @@ if [ -f /etc/init.d/bearDropper ] ; then
 fi
 echo -e 'Retrieving and installing latest version'
 (
-  download_github_file /etc/init.d/bearDropper robzr/bearDropper/master/src/init.d/bearDropper &&
-  download_github_file /etc/config/bearDropper robzr/bearDropper/master/src/config/bearDropper &&
-  download_github_file /usr/sbin/bearDropper robzr/bearDropper/master/bearDropper
+  download_github_file /etc/init.d/bearDropper fakuivan/bearDropper/master/src/init.d/bearDropper &&
+  download_github_file /etc/config/bearDropper fakuivan/bearDropper/master/src/config/bearDropper &&
+  download_github_file /usr/sbin/bearDropper fakuivan/bearDropper/master/bearDropper
 ) || { echo 'Failed to download script' 1>&2; exit 1; }
 chmod 755 /usr/sbin/bearDropper /etc/init.d/bearDropper
 echo -e 'Processing historical log data (this can take a while)'

@@ -15,9 +15,11 @@ None! Written entirely in busybox ash, uses all standard OpenWRT commands.
 **Installation**
 
 To install or upgrade to the latest bearDropper, run:
-
-	wget -qO- http://rawgit.com/robzr/bearDropper/master/install.sh | sh
-
+```sh
+# You'll need the ca-bundle and curl packages
+curl -Ls --cacert "/etc/ssl/certs/ca-certificates.crt" \
+    "https://raw.githubusercontent.com/fakuivan/bearDropper/master/install.sh" | sh
+```
  - To modify the config options, edit the uci config file (/etc/config/bearDropper)
  - Use bearDropper -h to see options for runtime config (runtime options override uci config options)
  - Consider increasing your syslog ring buffer size (/etc/config/system option log_size)
